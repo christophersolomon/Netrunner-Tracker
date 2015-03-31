@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Netrunner Tracker</string>
 
-    <string name="hello_world">Hello world!</string>
+    <string name="clicks">0</string>
+    <string name="creds">5</string>
+    <string name="brains">0</string>
+    <string name="tags">0</string>
     <string name="action_settings">Settings</string>
 </resources>

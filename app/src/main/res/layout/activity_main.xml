@@ -1,11 +1,234 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ff000000">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <!--main layout-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<!--click button layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:layout_height="match_parent"
+            >
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:id="@+id/clickUp"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"
+                android:onClick="clickUp"
+                android:layout_margin="0dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/clicks"
+                    android:id="@+id/clicks"
+                    android:layout_gravity="center"
+                    android:layout_margin="0dp"
+                    android:freezesText="true"
+                    android:textColor="#ffffffff" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgClick"
+                    android:src="@drawable/click"
+                    android:paddingLeft="3dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:id="@+id/clickDown"
+                android:onClick="clickDown"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"
+                android:layout_margin="0dp" />
+
+        </LinearLayout>
+<!--cred button layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:id="@+id/credUp"
+                android:onClick="credUp"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/creds"
+                    android:id="@+id/creds"
+                    android:layout_gravity="center"
+                    android:singleLine="false"
+                    android:freezesText="true"
+                    android:textColor="#ffffffff" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgCredit"
+                    android:layout_gravity="right"
+                    android:src="@drawable/credit"
+                    android:paddingTop="3dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:id="@+id/credDown"
+                android:onClick="credDown"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+        <!--brain button layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:id="@+id/brainUp"
+                android:onClick="brainUp"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="60dp"
+                android:layout_height="41dp"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/brains"
+                    android:id="@+id/brains"
+                    android:layout_gravity="center"
+                    android:freezesText="true"
+                    android:textColor="#ffffffff" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgBrain"
+                    android:src="@drawable/brain"
+                    android:paddingTop="3dp"
+                    android:paddingLeft="3dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:id="@+id/brainDown"
+                android:onClick="brainDown"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+        <!--tag button layout-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:id="@+id/tagUp"
+                android:onClick="tagUp"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/tags"
+                    android:id="@+id/tags"
+                    android:layout_gravity="center"
+                    android:freezesText="true"
+                    android:textColor="#ffffffff" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgTag"
+                    android:src="@drawable/tag"
+                    android:paddingTop="3dp"
+                    android:paddingLeft="3dp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight=".5"
+                android:id="@+id/tagDown"
+                android:onClick="tagDown"
+                android:clickable="true"
+                android:enabled="true"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

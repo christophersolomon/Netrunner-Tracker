@@ -2,8 +2,8 @@ package com.modernanachronism.netrunnertracker;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,28 +12,85 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void clickUp(View v) {
+        TextView tv = (TextView) findViewById(R.id.clicks);
+        int num = Integer.parseInt((String) tv.getText());
+        num++;
+        if (num >4){
+            num = 0;
         }
-
-        return super.onOptionsItemSelected(item);
+        tv.setText(Integer.toString(num));
     }
+
+
+
+    public void clickDown(View v) {
+        TextView tv = (TextView) findViewById(R.id.clicks);
+        int num = Integer.parseInt((String) tv.getText());
+        num--;
+        if (num <0){
+            num = 0;
+            }
+        tv.setText(Integer.toString(num));
+    }
+
+    public void credUp(View v) {
+        TextView tv = (TextView) findViewById(R.id.creds);
+        int num = Integer.parseInt((String) tv.getText());
+        num++;
+        tv.setText(Integer.toString(num));
+    }
+
+    public void credDown(View v) {
+        TextView tv = (TextView) findViewById(R.id.creds);
+        int num = Integer.parseInt((String) tv.getText());
+        num--;
+        if (num <0){
+            num = 0;
+        }
+        tv.setText(Integer.toString(num));
+    }
+
+    public void brainUp(View v) {
+        TextView tv = (TextView) findViewById(R.id.brains);
+        int num = Integer.parseInt((String) tv.getText());
+        num++;
+        if (num <5){
+            num = 5;
+        }
+        tv.setText(Integer.toString(num));
+    }
+
+    public void brainDown(View v) {
+        TextView tv = (TextView) findViewById(R.id.brains);
+        int num = Integer.parseInt((String) tv.getText());
+        num--;
+        if (num <0){
+            num = 0;
+        }
+        tv.setText(Integer.toString(num));
+    }
+
+    public void tagUp(View v) {
+        TextView tv = (TextView) findViewById(R.id.tags);
+        int num = Integer.parseInt((String) tv.getText());
+        num++;
+        tv.setText(Integer.toString(num));
+    }
+
+    public void tagDown(View v) {
+        TextView tv = (TextView) findViewById(R.id.tags);
+        int num = Integer.parseInt((String) tv.getText());
+        num--;
+        if (num <0){
+            num = 0;
+        }
+        tv.setText(Integer.toString(num));
+    }
+
+
 }

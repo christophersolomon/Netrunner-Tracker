@@ -59,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
         TextView tv = (TextView) findViewById(R.id.brains);
         int num = Integer.parseInt((String) tv.getText());
         num++;
-        if (num <5){
+        if (num > 5){
             num = 5;
         }
         tv.setText(Integer.toString(num));
